@@ -1,7 +1,7 @@
 Project Title:
 Java War Card Game
 
-Project description goes here
+Project description:
 
 War is a card game for two players. A standard deck of 52 cards is dealt so that both players have 26 cards. During
 each round of play (or "battle"), both players play a card from the top of their hand face up. The player who plays
@@ -16,11 +16,17 @@ Getting Started
 
 This project exists on Github
 https://github.com/mikeulanoski/Java-Project-Repository
+The files needed to run this application are:
+Main.java - This is the file that runs the program.
+Card.java - This file creates the card suits.
+xfile.txt - This file contains the integers the main.java file needs to create the card suits.
+yfile - This file contains the integers the main.java file needs to create the card ranks.
+winnerfile - This file contains the output of the winners of the war card game.
 
 
-### Prerequisites
+Prerequisites
 
-What things you need to install the software and how to install them
+None
 
 ```
 Give examples
@@ -44,49 +50,14 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [IntelliJ IDEA]
 
-## Contributing
+Author
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* Mike Ulanoski
 
 ## License
 
@@ -95,5 +66,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Zhipeng (Adrian) Mei I used some of his code to create this game
+* The Code Louisville team
+* Chris & Tony
