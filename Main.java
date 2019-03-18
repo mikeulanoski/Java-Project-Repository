@@ -9,56 +9,59 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.*;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.BufferedReader;
-import java.util.NoSuchElementException;
+
 
 public class Main {
+
     public static void main(String[] args) throws Exception {
 
             Scanner scanner = new Scanner(System.in);
-            System.out.print("Player 1, what is your name: ");
+            System.out.print("Player 1, please, sign in: ");
             String nameOne = scanner.nextLine();
-            System.out.print("Player 2, what is your name: ");
+            System.out.print("Player 2, please sign in: ");
             String nameTwo = scanner.nextLine();
+
+            System.out.print("\n");
+
+            System.out.print("How many past winners would you like to see?");
+            System.out.print("\n");
+            Integer pastWin = scanner.nextInt();
             scanner.close();
             System.out.print("\n");
 
-            System.out.print("Hall of Fame");
-            System.out.print("\n");
-            System.out.print("List of the Last 5 Winners");
-            System.out.print("\n");
 
-        String line = null;
-        BufferedReader bufferedReader =
-                new BufferedReader(new FileReader("/Users/mikeu/Downloads/JavaCardGame/src/com/teamtreehouse/winnerfile"));
 
-        int i = 0;
-        try {
-            //print first 5 lines or all if file has less than 5 lines
-            while(((line = bufferedReader.readLine()) != null) && i < 6) {
-                System.out.println(line);
-                i++;
+        List<String > list =new ArrayList<String>();
+        FileInputStream in = new FileInputStream("/Users/mikeu/Downloads/JavaCardGame/src/com/teamtreehouse/winnerfile");
+        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+
+        String strLine ="", tmp;
+        while ((tmp = br.readLine()) != null){
+            strLine =tmp+"\n"+strLine;
+            list.add(tmp);
+        }
+
+        if(list.size()>pastWin){
+            for (int i=list.size()-1; i>=(list.size()-pastWin); i--) {
+                System.out.println(list.get(i));
             }
-        }
-        finally {
-            bufferedReader.close();
+        }else{
+            for (int i=0; i<pastWin; i++) {
+                System.out.println(list.get(i));
+            }
 
         }
-
         System.out.print("\n");
 
 
+        try { Thread.sleep(2000); }
 
-        try
-        {
-            Thread.sleep(2000);
-        }
+
         catch(InterruptedException ex)
-        {
-            Thread.currentThread().interrupt();
-        }
-
+    {
+        Thread.currentThread().interrupt();
+    }
 
         List<Card> cardDeck = new ArrayList<Card>(); //create an ArrayList "cardDeck"
 
@@ -67,7 +70,6 @@ public class Main {
             // Create card suits (4 suits)
 
             Scanner x = new Scanner(new File("/Users/mikeu/Downloads/JavaCardGame/src/com/teamtreehouse/xfile"));
-            //System.out.print(x);
 
 
                 while (x.hasNext()) {
@@ -77,7 +79,6 @@ public class Main {
                 //Input from yfile
                 // Create card ranks (13 ranks)
                 Scanner y = new Scanner(new File("/Users/mikeu/Downloads/JavaCardGame/src/com/teamtreehouse/yfile"));
-                //System.out.print(y);
 
                     while (y.hasNext()) {
 
@@ -188,6 +189,7 @@ public class Main {
                         System.out.print("\n");
 
                     }
+
                     //otherwise player 2 wins the war round
                     else {
                         deck2.addAll(war1); //player2 get all 10 cards
@@ -210,21 +212,6 @@ public class Main {
                 System.out.print(" Wins the Game!");
                 System.out.print("\n");
 
-               //Scanner scanner1 = new Scanner(System.in);
-               // System.out.print("Hey Winner any comments? ");
-                //String comments1 = scanner1.nextLine();
-
-               /* Scanner scanner = new Scanner(System.in);
-                System.out.print("Player 1, what is your name: ");
-                String nameOne = scanner.nextLine();
-                System.out.print("Player 2, what is your name: ");
-                String nameTwo = scanner.nextLine();
-                scanner.close();
-                System.out.print("\n");
-
-                */
-
-
 
                 FileWriter writer = new FileWriter("/Users/mikeu/Downloads/JavaCardGame/src/com/teamtreehouse/winnerfile", true);
                 BufferedWriter buffer = new BufferedWriter(writer);
@@ -243,17 +230,17 @@ public class Main {
                 System.out.print("\n");
 
 
-                Scanner scanner2 = new Scanner(System.in);
-                System.out.print("Hey Winner any comments? ");
-                String comments2 = scanner2.nextLine();
+                //Scanner scanner2 = new Scanner(System.in);
+                //System.out.print("Hey Winner any comments? ");
+                //String comments2 = scanner2.nextLine();
 
 
                 FileWriter writer = new FileWriter("/Users/mikeu/Downloads/JavaCardGame/src/com/teamtreehouse/winnerfile", true);
                 BufferedWriter buffer = new BufferedWriter(writer);
 
-                buffer.write(nameTwo + "wins the game " + comments2);
-                buffer.newLine();
-                buffer.close();
+               buffer.write(nameTwo + "wins the game ");
+               buffer.newLine();
+               buffer.close();
 
                 break;
             }
