@@ -1,40 +1,31 @@
 package com.teamtreehouse;
 
 public class Card {
-    private int rank; //initialize the rank (2,3,4...King, Ace)
-    private int suit; //initialize the suit (spades, hearts...)
 
+    //initialize the rank (2,3,4...King, Ace)
+    private int rank;
 
-    //public displayCard(){ }
-    //constructor
+    //initialize the suit (spades, hearts...)
+    private int suit;
+
     public Card(int suit, int rank){
-
         this.rank = rank;
-
         this.suit = suit;
+    }
 
-    }//end constructor
-
-    //getter method
     public int getCard(){
         return rank;
-    }//end getCard
-
-    //setter method
-    public void setCard(int rank){
-        this.rank = rank;
-    }//end setCard
+    }
 
     @Override
     public String toString(){
-        //combine rank and suit together into a single string(ex: Ace of Diamonds)
 
-        //StringBuilder for modify later on
+//combine rank and suit together into a single string(ex: Ace of Diamonds)
         StringBuilder displayCard = new StringBuilder();
-        //System.out.println(displayCard);
-        //personal choice to use switch
+
+
         switch(rank){
-            //since rank is int type, now match int 11 to String jack...14 to Ace
+//since rank is int type, now match int 11 to String jack...14 to Ace
             case 11:
                 displayCard.append("Jack");
                 break;
@@ -48,12 +39,13 @@ public class Card {
                 displayCard.append("Ace");
                 break;
             default:
-                displayCard.append(rank); //card number from 2 to 10 does not need to modify
+                displayCard.append(rank); //card numbers from 2 to 10 do not need to modify
                 break;
 
-        }//end rank switch
+        }
 
-        displayCard.append(" of "); //setting the format of the output
+//setting the format of the output
+        displayCard.append(" of ");
 
         switch(suit){
             case 0:
@@ -68,15 +60,13 @@ public class Card {
             case 3:
                 displayCard.append("Diamonds");
                 break;
-            default: //anything else, do nothing
+            default:
                 break;
-        }//end suit switch
+        }
 
-
-        //return the result of an entire combined string
-
+//return the result of an entire combined string
         return displayCard.toString();
 
-    }//end toString
+    }
 
-}//end Card Class
+}
