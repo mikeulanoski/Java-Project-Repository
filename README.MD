@@ -1,7 +1,7 @@
 Project Title:
 Java War Card Game
 
-Project description:
+**Project description:
 
 War is a card game for two players. A standard deck of 52 cards is dealt so that both players have 26 cards. During
 each round of play (or "battle"), both players play a card from the top of their hand face up. The player who plays
@@ -12,7 +12,7 @@ same, additional wars are played until one player wins the turn. If either playe
 the game.
 
 
-Getting Started
+**Getting Started
 
 This project exists on Github
 https://github.com/mikeulanoski/Java-Project-Repository
@@ -24,48 +24,62 @@ yfile - This file contains the integers the main.java file needs to create the c
 winnerfile - This file contains the output of the winners of the war card game.
 
 
-Prerequisites
+**Prerequisites
 
-None
+Please use the latest version of Java (Java 11).
 
-```
-Give examples
-```
+**INSTALLING
 
-### Installing
+This program was built in Intelli J IDEA version 2018.3.5 (Community Edition)
+This program is written in Java 11. You will need to use Java 11 to properly run this program.
 
-A step by step series of examples that tell you how to get a development env running
+To run this program you must first compile the program. You can then run it.
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+Running this program in Java 8 was not possible. It is not backward compatible.
 
 
-## Built With
+**EXAMPLE
 
-* [IntelliJ IDEA]
+Player 1, please, sign in: Frank
+Player 2, please sign in: Bill
 
-Author
+How many past winners would you like to see?
+7
 
-* Mike Ulanoski
+jim wins the game
+tom wins the game
+Mike wins the game
+12345 wins the game
+zzz wins the game
+123 wins the game
+333 wins the game
 
-## License
+Frank plays 7 of Diamonds
+Bill plays 2 of Diamonds
+Frank wins the round
+Frank plays Jack of Hearts
+Bill plays Queen of Hearts
+Bill wins the round
+
+INFORMATION TRUNCATED DUE TO LENGTH
+
+Game Over
+Frank Wins the Game!
+
+Process finished with exit code 0
+
+**Built With
+[IntelliJ IDEA]
+
+**Author
+Mike Ulanoski
+
+**License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
+**Acknowledgments
 
 * Hat tip to anyone whose code was used
-* Zhipeng (Adrian) Mei I used some of his code to create this game
 * The Code Louisville team
-* Chris & Tony
+* Chris & Tony (Code Louisville)
