@@ -1,3 +1,6 @@
+Final Build 3/27/19
+
+
 Project Title:
 Java War Card Game
 
@@ -8,7 +11,7 @@ each round of play (or "battle"), both players play a card from the top of their
 the card of the higher rank wins both cards and places them at the bottom of his stack of cards. If both cards played
 are of the same rank, then both players play three additional cards face down and then one more card face up (this is
 called a "war"). The player who wins the war by playing the higher card wins all ten cards. If the ranks are still the
-same, additional wars are played until one player wins the turn. If either player runs out of cards to play, he loses
+same, additional wars are played until one player wins the turn. If either player runs out of cards to play, he/she loses
 the game.
 
 
@@ -35,7 +38,7 @@ This program is written in Java 11. You will need to use Java 11 to properly run
 
 To run this program you must first compile the program. You can then run it.
 
-Running this program in Java 8 was not possible. It is not backward compatible.
+Running this program in Java 8 was not possible. It is not backward compatible, I tried it.
 
 
 **EXAMPLE
