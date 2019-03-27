@@ -1,3 +1,4 @@
+//Final Build 3/27/19
 package com.teamtreehouse;
 
 import java.util.ArrayList;
@@ -17,51 +18,50 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
 // This section requires the two players to sign into the game.
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Player 1, please, sign in: ");
-            String nameOne = scanner.nextLine();
-            System.out.print("Player 2, please sign in: ");
-            String nameTwo = scanner.nextLine();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Player 1, please, sign in: ");
+        String nameOne = scanner.nextLine();
+        System.out.print("Player 2, please sign in: ");
+        String nameTwo = scanner.nextLine();
 
-            System.out.print("\n");
+        System.out.print("\n");
 
 // This section asks the users how many names of past winners they would like to see.
-            System.out.print("How many past winners would you like to see?");
-            System.out.print("\n");
-            Integer pastWin = scanner.nextInt();
-            scanner.close();
+        System.out.print("How many past winners would you like to see?");
+        System.out.print("\n");
+        Integer pastWin = scanner.nextInt();
+        scanner.close();
 
-            System.out.print("\n");
+        System.out.print("\n");
 
-            List<String > list =new ArrayList<String>();
+        List<String> list = new ArrayList<String>();
 
 // Input from the winners file
-            FileInputStream in = new FileInputStream("/Users/mikeu/Downloads/JavaCardGame/src/com/teamtreehouse/winnerfile");
-            BufferedReader br = new BufferedReader(new InputStreamReader(in));
+        FileInputStream in = new FileInputStream("/Users/mikeu/Downloads/JavaCardGame/src/com/teamtreehouse/winnerfile");
+        BufferedReader br = new BufferedReader(new InputStreamReader(in));
 
-            String strLine ="", tmp;
-                while ((tmp = br.readLine()) != null){
-                strLine =tmp+"\n"+strLine;
-                list.add(tmp);
-                }
+        String strLine = "", tmp;
+        while ((tmp = br.readLine()) != null) {
+            strLine = tmp + "\n" + strLine;
+            list.add(tmp);
+        }
 
-                    if(list.size()>pastWin){
-                        for (int i=list.size()-1; i>=(list.size()-pastWin); i--) {
-                        System.out.println(list.get(i));
-                        }
-                    }
-                    else{
-                        for (int i=0; i<pastWin; i++) {
-                        System.out.println(list.get(i));
-                        }
-                    }
+        if (list.size() > pastWin) {
+            for (int i = list.size() - 1; i >= (list.size() - pastWin); i--) {
+                System.out.println(list.get(i));
+            }
+        } else {
+            for (int i = 0; i < pastWin; i++) {
+                System.out.println(list.get(i));
+            }
+        }
 
         System.out.print("\n");
 
 // Show the list of past winners for 2000 milliseconds
-        try { Thread.sleep(2000); }
-
-        catch(InterruptedException ex) {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
 
@@ -76,29 +76,28 @@ public class Main {
             Scanner x = new Scanner(new File("/Users/mikeu/Downloads/JavaCardGame/src/com/teamtreehouse/xfile"));
 
 
-                while (x.hasNext()) {
+            while (x.hasNext()) {
 
-                    int q = Integer.parseInt(x.next());
+                int q = Integer.parseInt(x.next());
 
 //Input from yfile
 // Create card ranks (13 ranks)
-                    Scanner y = new Scanner(new File("/Users/mikeu/Downloads/JavaCardGame/src/com/teamtreehouse/yfile"));
+                Scanner y = new Scanner(new File("/Users/mikeu/Downloads/JavaCardGame/src/com/teamtreehouse/yfile"));
 
-                        while (y.hasNext()) {
+                while (y.hasNext()) {
 
-                        int r = Integer.parseInt(y.next());
+                    int r = Integer.parseInt(y.next());
 
 //create new card and add into the deck
-                        cardDeck.add(new Card(q, r));
-                        }
-                    y.close();
-
+                    cardDeck.add(new Card(q, r));
                 }
-            x.close();
-        }
-            catch (FileNotFoundException e) {
-            e.printStackTrace();
+                y.close();
+
             }
+            x.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
 //shuffle the deck of cards
         Collections.shuffle(cardDeck, new Random());
@@ -239,9 +238,7 @@ public class Main {
                 buffer.newLine();
                 buffer.close();
                 break;
-            }
-
-            else if (deck2.size() == 0) {
+            } else if (deck2.size() == 0) {
 
 //game over player two
                 System.out.print("Game Over");

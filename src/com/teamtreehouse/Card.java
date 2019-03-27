@@ -1,3 +1,4 @@
+//Final Build 3/27/19
 package com.teamtreehouse;
 
 public class Card {
@@ -8,24 +9,25 @@ public class Card {
     //initialize the suit (spades, hearts...)
     private int suit;
 
-    public Card(int suit, int rank){
+    public Card(int suit, int rank) {
         this.rank = rank;
         this.suit = suit;
     }
 
-    public int getCard(){
+    public int getCard() {
         return rank;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
 
-//combine rank and suit together into a single string(ex: Ace of Diamonds)
+//combine rank and suit together into a single string (example: Jack of Clubs)
         StringBuilder displayCard = new StringBuilder();
 
 
-        switch(rank){
-//since rank is int type, now match int 11 to String jack...14 to Ace
+        switch (rank) {
+
+//rank is an integer type, match integer 11 to String jack...14 to Ace
             case 11:
                 displayCard.append("Jack");
                 break;
@@ -39,7 +41,9 @@ public class Card {
                 displayCard.append("Ace");
                 break;
             default:
-                displayCard.append(rank); //card numbers from 2 to 10 do not need to modify
+
+//card numbers 2 to 10 do not need to be modified
+                displayCard.append(rank);
                 break;
 
         }
@@ -47,7 +51,7 @@ public class Card {
 //setting the format of the output
         displayCard.append(" of ");
 
-        switch(suit){
+        switch (suit) {
             case 0:
                 displayCard.append("Spades");
                 break;
